@@ -1,0 +1,10 @@
+landing page should contain:
+1: form element that contains:
+    - input element whose label and id are "username"
+    - input element whose labeland id are "title"
+    - a textarea element whose label and id are "content"
+    - a p element whose id is "error"
+
+Form must include the following logic:
+    - display the error message "Please complete the form" when the form is submitted with empty fields
+    - store post objects in local storage must contain "username", "title", "content" properties
