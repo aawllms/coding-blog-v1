@@ -6,11 +6,11 @@ function createArticle(blog) {
   const articleEl = document.createElement("article");
   articleEl.setAttribute("class", "card");
   const h2El = document.createElement("h2");
-  h2El.textContent = blog.formTitle;
+  h2El.textContent = blog.title;
   const pEl = document.createElement("p");
-  pEl.textContent = "posted by: " + blog.userName;
+  pEl.textContent = "Posted by: " + blog.username;
   const blockEl = document.createElement("blockquote");
-  blockEl.textContent = blog.formContent;
+  blockEl.textContent = blog.content;
 
   articleEl.appendChild(h2El);
   articleEl.appendChild(pEl);

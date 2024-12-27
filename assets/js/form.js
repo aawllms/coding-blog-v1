@@ -18,23 +18,23 @@ function removeErrorMessages() {
 // Create a function that handles the form submission
 function getFormData(event) {
   event.preventDefault();
-  const userName = document.querySelector("#username").value;
+  const username = document.querySelector("#username").value;
   const title = document.querySelector("#title").value;
   const content = document.querySelector("#content").value;
 
-  if (!userName || !title || !content) {
+  if (!username || !title || !content) {
     removeErrorMessages();
     displayError("Please complete the form.");
     return;
   }
 
   const formData = {
-    userName: userName,
-    formTitle: title,
-    formContent: content,
+    username: username,
+    title: title,
+    content: content,
   };
   //rab the form data and store it in local storage
-  console.log(formData);
+  //   console.log(formData);
   const blogData = JSON.parse(localStorage.getItem("blogPost")) || [];
   blogData.push(formData);
 
@@ -43,7 +43,7 @@ function getFormData(event) {
   window.location.href = "blog.html";
 }
 
-console.log(newPost);
+// console.log(newPost);
 
 // // TODO: Add an event listener to the form on submit. Call the function to handle the form submission.
 newPost.addEventListener("submit", getFormData);
