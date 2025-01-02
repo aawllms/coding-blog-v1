@@ -5,10 +5,10 @@ const newPost = document.querySelector(".form");
 
 //If the form is submitted with missing data, display an error message to the user.
 function displayError(message) {
-  const errorEl = document.createElement("p");
-  errorEl.classList.add("error");
-  errorEl.textContent = message;
-  document.querySelector(".form").appendChild(errorEl);
+  const error = document.createElement("p");
+  error.classList.add("error");
+  error.textContent = message;
+  document.querySelector(".form").appendChild(error);
 }
 
 function removeErrorMessages() {
