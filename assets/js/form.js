@@ -35,15 +35,15 @@ function getFormData(event) {
   };
   //rab the form data and store it in local storage
   //   console.log(formData);
-  const blogData = JSON.parse(localStorage.getItem("blogPost")) || [];
-  blogData.push(formData);
-
-  localStorage.setItem("blogPost", JSON.stringify(blogData));
+  storeLocalStorage(formData);
   //Then redirect to the blog page using the `redirectPage` function
-  window.location.href = "blog.html";
+  // window.location.href = "blog.html";
+  redirectPage("blog.html");
 }
 
 // console.log(newPost);
 
 // // TODO: Add an event listener to the form on submit. Call the function to handle the form submission.
 newPost.addEventListener("submit", getFormData);
+
+loadTheme();

@@ -13,25 +13,39 @@ themeSwitcher.textContent = mode === "light" ? "☀️" : "🌒";
 themeSwitcher.addEventListener("click", function () {
   if (mode === "light") {
     mode = "dark";
+  } else {
+    mode = "light";
+  }
+  loadTheme();
+});
+
+const loadTheme = function () {
+  if (mode === "dark") {
     container.setAttribute("class", "container dark");
     themeSwitcher.textContent = "🌒";
     localStorage.setItem("theme", "dark");
+    document.documentElement.style.setProperty("--circle-color", "gray");
   } else {
-    mode = "light";
     container.setAttribute("class", "container light");
     themeSwitcher.textContent = "☀️";
     localStorage.setItem("theme", "light");
+    document.documentElement.style.setProperty("--circle-color", "#ffb100");
   }
-});
+};
 
 // TODO: Create a function called `readLocalStorage` that reads from local storage and returns the data. If no data exists, return an empty array.
-// function readLocalStorage() {
-//   const blogData = JSON.parse(localStorage.getItem("blogPost")) || [];
-//   blogData.push(formData);
-// }
+function readLocalStorage() {
+  return JSON.parse(localStorage.getItem("blogPost")) || [];
+}
 // // TODO: Create a function called `storeLocalStorage` that takes a given object and saves the new data to the existing blog data in local storage.
-// function storeLocalStorage() {
-//   localStorage.setItem("blogPost", JSON.stringify(blogData));
+function storeLocalStorage(formData) {
+  const blogData = readLocalStorage();
+  blogData.push(formData);
+
+  localStorage.setItem("blogPost", JSON.stringify(blogData));
+}
+
+// localStorage.setItem("blogPost", JSON.stringify(blogData));
 //   //Then redirect to the blog page using the `redirectPage` function
 //   window.location.href = "blog.html";
 // }

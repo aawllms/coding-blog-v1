@@ -26,7 +26,7 @@ function noPost() {
 }
 // TODO: Create a function called `renderBlogList` that renders the list of blog posts if they exist. If not, call the no posts function.
 function renderBlogList() {
-  const blogData = JSON.parse(localStorage.getItem("blogPost")) || [];
+  const blogData = readLocalStorage()
   if (blogData.length > 0) {
     for (let i = 0; i < blogData.length; i++) {
       createArticle(blogData[i]);
@@ -41,5 +41,8 @@ renderBlogList();
 
 // TODO: Redirect to the home page using the `redirectPage` function found in logic.js when the back button is clicked
 backBtn.addEventListener("click", function () {
-  window.location.href = "index.html";
+  // window.location.href = "index.html";
+  redirecctPage("index.html");
 });
+
+loadTheme();
