@@ -42,7 +42,7 @@ renderBlogList();
 // TODO: Redirect to the home page using the `redirectPage` function found in logic.js when the back button is clicked
 backBtn.addEventListener("click", function () {
   // window.location.href = "index.html";
-  redirecctPage("index.html");
+  redirectPage("index.html");
 });
 
 loadTheme();
